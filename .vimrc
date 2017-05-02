@@ -113,9 +113,9 @@ endfunc
 " }}}
 " Plugins {{{
 call plug#begin("~/.vim/plugged")
-
 Plug 'sjl/gundo.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
 
     " NerdTree {{{
     map <F2> :NERDTreeToggle<CR>
