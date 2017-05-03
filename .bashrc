@@ -13,3 +13,8 @@ EDITOR=/usr/bin/vim
 # <<< END ADDED BY CNCHI INSTALLER
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+function activate()
+{
+    directory=${2:-~/.virtualenvs}
+    source $directory/$1/bin/activate
+}
