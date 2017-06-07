@@ -18,3 +18,5 @@ function activate()
     directory=${2:-~/.virtualenvs}
     source $directory/$1/bin/activate
 }
+
+export GITHUB_TOKEN="9336f5eb7fdd9c064f51261749839d983e56acb7"
