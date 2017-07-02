@@ -21,4 +21,3 @@ function activate()
 }
 
 export PATH="$PATH:/usr/local/texlive/2017/bin/x86_64-linux"
-export GITHUB_TOKEN="9336f5eb7fdd9c064f51261749839d983e56acb7"
