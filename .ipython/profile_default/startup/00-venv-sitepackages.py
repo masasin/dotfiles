@@ -7,4 +7,4 @@ virtualenv = os.environ.get('VIRTUAL_ENV')
 
 if virtualenv:
     venv_path = list((Path(virtualenv)/'lib').iterdir())[0]/'site-packages'
-    sys.path.append(str(venv_path))
+    sys.path.insert(0, str(venv_path))
