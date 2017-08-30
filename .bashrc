@@ -13,8 +13,6 @@ EDITOR=/usr/bin/vim
 # <<< END ADDED BY CNCHI INSTALLER
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias google-chrome=google-chrome-stable
-alias git=hub
 
 function activate()
 {
