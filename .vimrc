@@ -65,7 +65,7 @@ set noerrorbells
 set visualbell
 set t_vb=
 " }}}
-" Handle Japanese files properly {{{
+" Handle file encodings properly {{{
 set encoding=utf-8
 set fileencodings=utf8,iso-2022-jp,euc-jp,cp932,default,latin1
 " }}}
