@@ -66,7 +66,8 @@ set visualbell
 set t_vb=
 " }}}
 " Handle Japanese files properly {{{
-set fileencodings=iso-2022-jp,euc-jp,cp932,utf8,default,latin1
+set encoding=utf-8
+set fileencodings=utf8,iso-2022-jp,euc-jp,cp932,default,latin1
 " }}}
 " Speed {{{
 set lazyredraw
