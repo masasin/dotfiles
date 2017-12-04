@@ -21,3 +21,4 @@ function activate()
 }
 
 export PATH="$PATH:$HOME/.local/bin:/usr/local/texlive/2017/bin/x86_64-linux"
+set -o vi
