@@ -7,11 +7,10 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-# >>> BEGIN ADDED BY CNCHI INSTALLER
 BROWSER=/usr/bin/google-chrome
 EDITOR=/usr/bin/vim
-# <<< END ADDED BY CNCHI INSTALLER
 
+alias activate='source .env/bin/activate'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
 alias xclip='xclip -selection c'
 
