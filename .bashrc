@@ -16,3 +16,7 @@ alias xclip='xclip -selection c'
 
 export PATH="$PATH:$HOME/.local/bin:/usr/local/texlive/2017/bin/x86_64-linux"
 set -o vi
+
+# bash-git-prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.config/bash-git-prompt/gitprompt.sh
