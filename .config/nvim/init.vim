@@ -89,9 +89,9 @@ set nobackup
 set writebackup
 set undolevels=1000
 if has('persistent_undo') && !isdirectory(expand('~').'/.config/nvim/backups')
-  silent !mkdir ~/.conf/nvim/backups > /dev/null 2>&1
+  silent !mkdir ~/.config/nvim/backups > /dev/null 2>&1
 endif
-set undodir=~/.conf/nvim/backups
+set undodir=~/.config/nvim/backups
 set undofile
 " }}}
 " Autogroups {{{
