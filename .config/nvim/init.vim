@@ -17,11 +17,9 @@ syntax on
 " Font and colours {{{
 set gfn=DejaVu\ Sans\ Mono\ 9
 colorscheme NeoSolarized
-if 8 < strftime('%H') && strftime('%H') < 18
-    set background=light
-else
-    set background=dark
-endif
+set background=dark
+highlight Normal ctermbg=None
+highlight NonText ctermbg=None
 " }}}
 " Set decent indentation defaults {{{
 set autoindent
