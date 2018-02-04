@@ -9,12 +9,12 @@
 #umask 022
 
 # if running bash
-if [ -n "$BASH_VERSION" ]; then
+# if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
+    # if [ -f "$HOME/.bashrc" ]; then
+	# . "$HOME/.bashrc"
+    # fi
+# fi
 
 alias ls='ls --color=auto'
 BROWSER=/usr/bin/google-chrome
@@ -29,4 +29,4 @@ set -o vi
 
 # bash-git-prompt
 GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.config/bash-git-prompt/gitprompt.sh
+source $HOME/.config/bash-git-prompt/gitprompt.sh

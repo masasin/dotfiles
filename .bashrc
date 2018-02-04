@@ -9,3 +9,7 @@
 shopt -s extglob
 
 PS1='[\u@\h \W]\$ '
+
+if [ -f "$HOME/.profile" ]; then
+    . "$HOME/.profile"
+fi
