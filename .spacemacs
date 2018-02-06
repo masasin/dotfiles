@@ -315,7 +315,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'org
     (custom-set-variables
-     '(org-agenda-file-regexp '("~/documents/notes/*.org"))
+     '(org-agenda-files '("~/documents/notes/"))
      '(org-default-notes-file "~/documents/notes/notes.org")
      '(org-refile-targets '((org-agenda-files :maxlevel: . 3)))
      '(org-refile-use-outline-path 'file)
@@ -324,10 +324,15 @@ you should place your code here."
      '(org-todo-keywords '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CANCEL" "DEFER")))
      '(org-enforce-todo-dependencies t)
      '(org-enforce-todo-checkbox-dependencies t)
-     '(org-log-reschedule t)
-     '(org-log-redeadline t)
+     '(org-log-reschedule 'time)
+     '(org-log-redeadline 'time)
+     '(org-startup-indented t)
      '(org-capture-templates
-       '(("j" "Journal entry" entry
+       '(
+         ("e" "Event" entry
+          (file+headline org-default-notes-file "Events")
+          "* %?\n")
+         ("j" "Journal entry" entry
           (file "~/documents/notes/journal.org")
           "* %U\n%?")
          ("l" "Log" entry
@@ -339,9 +344,8 @@ you should place your code here."
          ("t" "Todo" entry
           (file+headline org-default-notes-file "Tasks")
           "* TODO %?\n%a")
-         ))
-     '(org-startup-indented t)
-     '(org-bullet-mode t)
+         )
+       )
      )
    )
  )
