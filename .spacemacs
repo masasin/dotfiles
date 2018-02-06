@@ -60,7 +60,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(org-projectile)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -120,7 +120,9 @@ values."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+                                (projects . 7)
+                                (agenda . 7)
+                                (todos . 7))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -313,11 +315,36 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'org
     (custom-set-variables
-     '(org-agenda-file-regexp (quote "~/documents/notes/*.org"))
+     '(org-agenda-file-regexp '("~/documents/notes/*.org"))
+     '(org-default-notes-file "~/documents/notes/notes.org")
+     '(org-refile-targets '((org-agenda-files :maxlevel: . 3)))
+     '(org-refile-use-outline-path 'file)
+     '(org-refile-allow-creating-parent-nodes 'confirm)
+     '(org-outline-path-complete-in-steps nil)
      '(org-todo-keywords '((sequence "TODO" "NEXT" "WAIT" "|" "DONE" "CANCEL" "DEFER")))
+     '(org-enforce-todo-dependencies t)
+     '(org-enforce-todo-checkbox-dependencies t)
+     '(org-log-reschedule t)
+     '(org-log-redeadline t)
+     '(org-capture-templates
+       '(("j" "Journal entry" entry
+          (file "~/documents/notes/journal.org")
+          "* %U\n%?")
+         ("l" "Log" entry
+          (file "~/documents/notes/logbook.org")
+          "* %U\n%?")
+         ("n" "Note" entry
+          (file+headline org-default-notes-file "Notes")
+          "* %?\n%a")
+         ("t" "Todo" entry
+          (file+headline org-default-notes-file "Tasks")
+          "* TODO %?\n%a")
+         ))
      '(org-startup-indented t)
+     '(org-bullet-mode t)
      )
-   ))
+   )
+ )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
