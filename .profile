@@ -18,7 +18,13 @@
 
 alias ls='ls --color=auto'
 BROWSER=/usr/bin/google-chrome
-EDITOR=/usr/bin/vim
+
+# Emacs Daemon
+ALTERNATE_EDITOR=''
+EDITOR='emacsclient -t'
+VISUAL='emacsclient -c -a emacs'
+alias emax='emacsclient -t'
+alias emacsc='emacsclient -c -a emacs'
 
 alias activate='source .env/bin/activate'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
