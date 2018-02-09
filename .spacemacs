@@ -315,8 +315,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (with-eval-after-load 'org
     (custom-set-variables
-     '(org-agenda-files '("~/documents/notes/"))
-     '(org-default-notes-file "~/documents/notes/notes.org")
+     '(org-agenda-files '("~/Dropbox/notes/"))
+     '(org-default-notes-file "~/Dropbox/notes/notes.org")
      '(org-refile-targets '((org-agenda-files :maxlevel: . 3)))
      '(org-refile-use-outline-path 'file)
      '(org-refile-allow-creating-parent-nodes 'confirm)
@@ -333,10 +333,10 @@ you should place your code here."
           (file+headline org-default-notes-file "Events")
           "* %?\n")
          ("j" "Journal entry" entry
-          (file "~/documents/notes/journal.org")
+          (file "~/Dropbox/notes/journal.org")
           "* %U\n%?")
          ("l" "Log" entry
-          (file "~/documents/notes/logbook.org")
+          (file "~/Dropbox/notes/logbook.org")
           "* %U\n%?")
          ("n" "Note" entry
           (file+headline org-default-notes-file "Notes")
@@ -347,6 +347,11 @@ you should place your code here."
          )
        )
      )
+    (add-hook 'org-mode-hook #'org-overview)
+;    (define-advice switch-to-buffer (:after (buffer) org-overview-on-open)
+;      "Fold everything after switching to org buffer."
+;      (when (equal major-mode 'org-mode)
+;        (org-overview)))
    )
  )
 
